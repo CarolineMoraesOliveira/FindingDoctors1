@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+* {
+	font-family:'Open Sans';
+	padding-top: 5px;
+	font-weight: thin;
+	text-align: center;
+	
+}
+
+.background-image{
+  background-image: url('https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover; /* Isso fará com que a imagem cubra a tela inteira */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center; /* Isso centralizará a imagem na tela */
+  height: 100vh; /* Define a altura para cobrir toda a tela verticalmente */
+}
+span {
+	color: orange;
+}
+p {
+	
+	font-size: 25px;
+	color: white;
+}
+
+.tables {
+	display: flex;
+	justify-content: space-around;
+	font-size: 10px;
+	color: white;
+}
+h1 {
+	font-size: 60px;
+	color: orange;
+}
+.top1, .top2 {
+	font-size: 30px;
+}
+
+form {
+	font-size: 20px;
+	
+}
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px grey inset; /* WebKit-specific box-shadow */
+    box-shadow: 0 0 0 30px white inset; /* Standard box-shadow for compatibility */
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: black !important; /* Define a cor do texto (azul) */
+    font-size: 5px;
+}
+
+#error-message {
+    color: red; /* Define a cor do texto para preto */
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+* {
+	font-family:'Open Sans';
+	padding-top: 5px;
+	font-weight: thin;
+	text-align: center;
+	
+}
+
+.background-image{
+  background-image: url('https://images.pexels.com/photos/2847648/pexels-photo-2847648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover; /* Isso fará com que a imagem cubra a tela inteira */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center; /* Isso centralizará a imagem na tela */
+  height: 100vh; /* Define a altura para cobrir toda a tela verticalmente */
+}
+span {
+	color: orange;
+}
+.top {
+	font-size:30px;
+	display: flex;
+}

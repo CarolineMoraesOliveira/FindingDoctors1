@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+* {
+	font-family:'Open Sans';
+	font-weight: thin;
+	
+}
+.background-image{
+  background-image: url('https://images.pexels.com/photos/7967220/pexels-photo-7967220.jpeg');
+  background-size: 100%; /* Isso fará com que a imagem cubra a tela inteira */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center; /* Isso centralizará a imagem na tela */
+  height: 100vh; /* Define a altura para cobrir toda a tela verticalmente */
+}
+
+span {
+	color: orange;
+}
+.top {
+	font-size:30px;
+	text-align: center;
+}
+p {
+	text-align: left;
+}
