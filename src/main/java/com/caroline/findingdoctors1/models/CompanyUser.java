@@ -24,20 +24,20 @@ public class CompanyUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotBlank(message="Company name is required!")
+    @NotBlank(message="Company name is required")
     @Size(min=3, max=30, message="Company name must be between 3 and 30 characters(letters)")
     private String companyUserName;
     
-    @NotBlank(message="Email is required!")
-    @Email(message="Please enter a valid email!")
+    @NotBlank(message="Email is required")
+    @Email(message="Please enter a valid email")
     private String email;
     
-    @NotBlank(message="Password is required!")
+    @NotBlank(message="Password is required")
     @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
     private String password;
     
     @Transient
-    @NotBlank(message="Confirm Password is required!")
+    @NotBlank(message="Confirm Password is required")
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
     
@@ -50,15 +50,14 @@ public class CompanyUser {
     	
     }
 
-	
-	
+
 	public CompanyUser(Long id,
-			@NotBlank(message = "Company name is required!") @Size(min = 3, max = 30, message = "Company name must be between 3 and 30 characters(letters)") String companyUserName,
-			@NotBlank(message = "Email is required!") @Email(message = "Please enter a valid email!") String email,
-			@NotBlank(message = "Password is required!") @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
-			@NotBlank(message = "Confirm Password is required!") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
+			@NotBlank(message = "Company name is required") @Size(min = 3, max = 30, message = "Company name must be between 3 and 30 characters(letters)") String companyUserName,
+			@NotBlank(message = "Email is required") @Email(message = "Please enter a valid email") String email,
+			@NotBlank(message = "Password is required") @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
+			@NotBlank(message = "Confirm Password is required") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
 			List<Review> reviews) {
-	
+		
 		this.id = id;
 		this.companyUserName = companyUserName;
 		this.email = email;
@@ -66,6 +65,10 @@ public class CompanyUser {
 		this.confirm = confirm;
 		this.reviews = reviews;
 	}
+
+
+
+
 
 
 	// getters and setters

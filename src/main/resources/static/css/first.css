@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 .nav {
 	display: flex;
@@ -33,6 +37,7 @@ h1 {
 .name {
 	margin-top: 50px;
 	margin-bottom: 50px;
+	display: flex;
 }
 h3 {
 	font-size: 15px;
@@ -53,24 +58,30 @@ a:hover {
 @keyframes fire {
     0% {
         color: #ff5722;
-        text-shadow: 0 0 5px #ff5722, 0 0 10px #ff5722, 0 0 15px #ff5722, 0 0 20px #ff5722, 0 0 25px #ff5722, 0 0 30px #ff5722, 0 0 35px #ff5722;
+        text-shadow: 0 0 5px #d2d9db, 0 0 10px #d2d9db, 0 0 15px #d2d9db, 0 0 20px #d2d9db, 0 0 25px #d2d9db, 0 0 30px #d2d9db, 0 0 35px #d2d9db;
     }
     50% {
         color: #ffeb3b;
         text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b, 0 0 20px #ffeb3b, 0 0 25px #ffeb3b, 0 0 30px #ffeb3b, 0 0 35px #ffeb3b;
     }
     100% {
-        color: #ff5722;
-        text-shadow: 0 0 5px #ff5722, 0 0 10px #ff5722, 0 0 15px #ff5722, 0 0 20px #ff5722, 0 0 25px #ff5722, 0 0 30px #ff5722, 0 0 35px #ff5722;
+        color: #4B1A73;
+        text-shadow: 0 0 5px #d2d9db, 0 0 10px #d2d9db, 0 0 15px #d2d9db, 0 0 20px #d2d9db, 0 0 25px #d2d9db, 0 0 30px #d2d9db, 0 0 35px #ff5722;
     }
 }
 
 .fire-text {
-    font-size: 48px;
+    font-size: 50px;
     font-weight: bold;
     font-family: Arial, sans-serif;
     animation: fire 1s infinite alternate;
-    padding-top: 80px;
+    padding-top: 200px;
+    text-align: center;
+}
+
+img {
+	margin-left: 0px;
+	margin-top: 45px;
 }
 
 

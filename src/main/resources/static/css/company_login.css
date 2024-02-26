@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 * {
 	font-family:'Open Sans';
 	padding-top: 5px;
@@ -8,21 +13,13 @@
 	
 }
 
-.background-image{
-  background-image: url('https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  background-size: cover; /* Isso fará com que a imagem cubra a tela inteira */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center; /* Isso centralizará a imagem na tela */
-  height: 100vh; /* Define a altura para cobrir toda a tela verticalmente */
-}
 span {
 	color: orange;
 }
 p {
 	
 	font-size: 25px;
-	color: white;
+	color:#9acd32; 
 }
 
 .tables {
@@ -37,10 +34,12 @@ h1 {
 }
 .top1, .top2 {
 	font-size: 30px;
+	color: grey;
 }
 
 form {
 	font-size: 20px;
+	color: grey;
 	
 }
 /* Cor de fundo do autocomplete */

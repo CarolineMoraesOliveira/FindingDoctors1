@@ -41,7 +41,7 @@ public RegisterUser register(@Valid RegisterUser newUser, BindingResult result) 
     	}
     	
     	if (result.hasErrors()) { // or if the result from the user has errors in validations will be returned the message in the model validation
-    		result.getAllErrors();
+    		
     		return null;
     	}
     		

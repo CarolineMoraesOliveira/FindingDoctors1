@@ -15,7 +15,6 @@
 	<title>Login and Registration</title>
 </head>
 <body>
-<div class="background-image">
 <div class = "top">
 	<p>FINDING<span>DOCTORS</span><p>
 	<h1>Welcome doctor!</h1>
@@ -26,42 +25,55 @@
 		<h2 class="top2">Log in</h2>
 		<form:form action = "/login" modelAttribute = "newLogin" method = "post">
 	
-			<form:label path="email">Email:</form:label>
+			<div class="input-group">
+				<form:label path="email"></form:label>
+				<form:input type = "email" path = "email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="input-group-left"/><br>
+			</div>
 			<form:errors path = "email" id="error-message"></form:errors><br>
-			<form:input type = "email" path = "email"/><br>
-		
-			<form:label path="password">Password:</form:label>
+			
+			<div class="input-group">
+				<form:label path="password"></form:label>
+				<form:input type = "password" path = "password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="input-group-left"/><br>
+			</div>	
 			<form:errors path = "password" id="error-message"></form:errors><br>
-			<form:input type = "password" path = "password"/><br>
-	
+			
+			
 			 <button type="submit" class="btn btn-primary">Log in</button>
+		
 		</form:form>
 	</div>
 	<div>
 		<h2 class= "top1">Register</h2>
 		<form:form action = "/register_doctor" modelAttribute = "newUser" method = "post"> <!-- action to send the form by a post method and "blank paper with the user data -->
 	
-			<form:label path="firstName">First name:</form:label>
+			<div class="input-group">
+				<form:label path="firstName"></form:label>
+				<form:input type = "text" path = "firstName" class="form-control" placeholder="First name" aria-label="First name" aria-describedby="input-group-left"/><br>
+			</div>	
 			<form:errors path = "firstName" id="error-message"></form:errors><br>
-			<form:input type = "text" path = "firstName"/><br>
-	
-			<form:label path="email">Email:</form:label>
+			
+			<div class="input-group">
+				<form:label path="email"></form:label>
+				<form:input type = "email" path = "email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="input-group-left"/><br>
+			</div>	
 			<form:errors path = "email" id="error-message"></form:errors><br>
-			<form:input type = "email" path = "email"/><br>
-	
-			<form:label path="password">Password:</form:label>
+			
+			<div class="input-group">
+				<form:label path="password"></form:label>
+				<form:input type = "password" path = "password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="input-group-left"/><br>
+			</div>	
 			<form:errors path = "password" id="error-message"></form:errors><br>
-			<form:input type = "password" path = "password" /><br>
-	
-			<form:label path="confirm">Confirm password:</form:label>
+			
+			<div class="input-group">
+				<form:label path="confirm"></form:label>
+				<form:input type = "password" path = "confirm" class="form-control" placeholder="Confirm password" aria-label="Confirm password" aria-describedby="input-group-left"/><br>
+			</div>	
 			<form:errors path = "confirm" id="error-message"></form:errors><br>
-			<form:input type = "password" path = "confirm"/><br>
-
-			 <button type="submit" class="btn btn-primary">Register</button>
+		
+			
+			<button type="submit" class="btn btn-primary">Register</button>
 		</form:form>
 	</div>
 </div>
-</div>
-
 </body>
 </html>

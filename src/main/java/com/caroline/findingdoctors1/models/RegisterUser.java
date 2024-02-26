@@ -11,6 +11,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -22,15 +23,15 @@ public class RegisterUser {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	 	
-	 	@NotNull(message="First name is required!")
+	 	@NotBlank(message="First name is required")
 	    @Size(min=3, max=30, message="First name must be between 3 and 30 characters.")
 	    private String firstName;
 	    
-	 	@NotNull(message="Email is required!")
+	 	@NotBlank(message="Email is required")
 	    @Email(message="Please enter a valid email!")
 	    private String email;
 	    
-	    @NotNull(message="Password is required!")
+	    @NotBlank(message="Password is required")
 	    @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
 	    private String password;
 	    
@@ -43,7 +44,7 @@ public class RegisterUser {
 	    }
 	    
 	    @Transient
-	    @NotNull(message="Confirm Password is required!")
+	    @NotNull(message="Confirm Password is required")
 	    @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
 	    private String confirm;
 	    
@@ -52,12 +53,11 @@ public class RegisterUser {
 	    }
 
 		public RegisterUser(Long id,
-				@NotNull(message = "First name is required!") @Size(min = 3, max = 30, message = "First name must be between 3 and 30 characters(letters)") String firstName,
-				@NotNull(message = "Email is required!") @Email(message = "Please enter a valid email!") String email,
-				@NotNull(message = "Password is required!") @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
+				@NotBlank(message = "First name is required!") @Size(min = 3, max = 30, message = "First name must be between 3 and 30 characters.") String firstName,
+				@NotBlank(message = "Email is required") @Email(message = "Please enter a valid email!") String email,
+				@NotBlank(message = "Password is required!") @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
 				Date createdAt,
 				@NotNull(message = "Confirm Password is required!") @Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm) {
-			
 			
 			this.id = id;
 			this.firstName = firstName;
@@ -66,9 +66,9 @@ public class RegisterUser {
 			this.createdAt = createdAt;
 			this.confirm = confirm;
 		}
-		
-		// getters and setters
 
+		// getters and setters
+		
 		public Long getId() {
 			return id;
 		}
@@ -116,6 +116,7 @@ public class RegisterUser {
 		public void setConfirm(String confirm) {
 			this.confirm = confirm;
 		}
-	
-}
 
+		
+
+}

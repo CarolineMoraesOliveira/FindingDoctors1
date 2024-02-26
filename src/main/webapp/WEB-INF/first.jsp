@@ -25,9 +25,6 @@
 </head>
 <body style="background-color: white;">
 <ul class="nav">
-  <li class= nav-item>
-  	<img src= "https://www.canva.com/design/DAF1kZws3KI/dCeNhDBYquhaLJKEY6PeyQ/edit?utm_content=DAF1kZws3KI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" />
-  </li>
   <li class="nav-item">
   	<a href="/doctor" class="btn btn-outline-primary" role="button">Are you a doctor</a>
   </li>
@@ -37,6 +34,7 @@
 </ul>
 <div class = "name">
 	<h1>FINDING<span>DOCTORS</span></h1>
+  	<img src= "https://media.istockphoto.com/id/849801796/pt/vetorial/line-stethoscope-icon-on-white-background.jpg?s=612x612&w=0&k=20&c=B2SaMY7Rw1yPAExTcRuWv41F_4OITBgGXo5P9zm7ULE=" width="70" height="90"/>
 	<div class="fire-text">
 		<h2>The best <span>way</span> to connect <span>employers</span> and specialty <span>doctors!</span></h2>
 	</div>
