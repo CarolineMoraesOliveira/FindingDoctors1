@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 * {
 	font-family:'Open Sans';
 	font-weight: thin;
@@ -12,6 +17,7 @@
   background-attachment: scroll;
   background-position: center center; /* Isso centralizará a imagem na tela */
   height: 100vh; /* Define a altura para cobrir toda a tela verticalmente */
+  opacity: 0.5; /* Define a opacidade da imagem para 50% */
 }
 
 span {
