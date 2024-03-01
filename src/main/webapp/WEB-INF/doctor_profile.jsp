@@ -11,24 +11,19 @@
 <html lang="en" data-bs-theme="white">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-	<style>
-		body {font-family: 'Poppins';font-size: 15px;}
-		a { text-decoration: none;}
-	</style>
-	<title>Finding Doctors</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="/css/doctor_profile.css">
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/doctor_profile.js"></script>	
+	<script type="text/javascript" src="/js/doctor_profile.js"></script>
+	<title>Finding Doctors</title>		
 </head>
 <body>
 <div class="background-image">
 	<div class = "top">
 		<p>FINDING<span>DOCTORS</span><p>
 	</div>
-	<div class = "top">
+	<div class = "top1">
 		<div>
 			<h2><c:out value= "${newUser.firstName}"></c:out>'s profile page</h2>
 		</div>

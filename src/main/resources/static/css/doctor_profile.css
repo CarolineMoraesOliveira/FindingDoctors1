@@ -7,9 +7,21 @@ html, body {
 
 * {
 	font-family:'Open Sans';
+	padding-top: 5px;
 	font-weight: thin;
+	text-align: center;
 	
 }
+
+span {
+	color: orange;
+}
+p {
+	
+	font-size: 25px;
+	color:#9acd32; 
+}
+
 .background-image{
   background-image: url('https://images.pexels.com/photos/7967220/pexels-photo-7967220.jpeg');
   background-size: 100%; /* Isso fará com que a imagem cubra a tela inteira */
@@ -20,9 +32,7 @@ html, body {
   opacity: 0.5; /* Define a opacidade da imagem para 50% */
 }
 
-span {
-	color: orange;
-}
+
 .top {
 	font-size:30px;
 	display: flex;
