@@ -1,17 +1,24 @@
 @charset "UTF-8";
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 * {
 	font-family:'Open Sans';
+	padding-top: 5px;
 	font-weight: thin;
-	
+	text-align: center;	
 }
-.background-image{
-  background-image: url('https://images.pexels.com/photos/4484805/pexels-photo-4484805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-  background-size: 70%; /* Isso fará com que a imagem cubra a tela inteira */
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center right; /* Isso centralizará a imagem na tela */
-  height: 200vh; /* Define a altura para cobrir toda a tela verticalmente */
+
+span {
+	color: orange;
+}
+p {
+	
+	font-size: 25px;
+	color:#9acd32; 
 }
 
 span {
