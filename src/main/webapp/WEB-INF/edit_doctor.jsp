@@ -33,7 +33,7 @@
 		
 		<div class = "division">
 			<div>
-				<div class=" question">
+				<div class="question">
 					<form:label path="lastName">Last name</form:label>
 				</div>
 				<form:input type ="text" path = "lastName" class="form-input" placeholder="Your last name" ></form:input>   
