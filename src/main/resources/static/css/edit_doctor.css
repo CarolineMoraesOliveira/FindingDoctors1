@@ -40,7 +40,7 @@ form, p {
 .up {
 	line-height: 0;
 }
- .question {
+.question {
     text-align: center;
 }
 
@@ -48,5 +48,15 @@ form, p {
     width: 20%; 
     box-sizing: border-box; 
     text-align: left; 
+}
+.division {
+	display: flex;
+}
+.large-textbox {
+	width: 300px;
+}
+.superlarge-textbox {
+	width: 300px;
+	height: 100px;
 }
 
