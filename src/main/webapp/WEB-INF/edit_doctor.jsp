@@ -15,7 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/edit_doctor.css">
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/edit_doctor.js"></script>	
+	<script type="text/javascript" src="/js/edit_doctor.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	
 	<title>Edit your profile</title>
 </head>
 <body>
@@ -70,6 +71,31 @@
 					<input type="radio" name="haveCertification" value="no" id="no">
 					<label for="no">No</label>
 				</p>
+				<div id="haveCertificationError" class="error-message" style="display: none;"></div>
+				<script>
+				    $(document).ready(function() {
+				        // Função para validar o campo haveCertification
+				        function validateHaveCertification() {
+				            if ($('input[name="haveCertification"]:checked').length === 0) {
+				                $('#haveCertificationError').text('Please select an option').show();
+				                return false;
+				            }
+				            $('#haveCertificationError').hide();
+				            return true;
+				        }
+				
+				        // Validar ao enviar o formulário
+				        $('form').submit(function() {
+				            return validateHaveCertification();
+				        });
+				
+				        // Validar ao alterar a seleção
+				        $('input[name="haveCertification"]').change(function() {
+				            validateHaveCertification();
+				        });
+				    });
+			</script>
+				
 			</div>
 			<div>
 				<div class=" question">
@@ -85,7 +111,32 @@
 					<input type="radio" name="havePosGrad" value="no" id="no">
 					<label for="no">No</label>
 				</p>
+				<div id="havePosGradError" class="error-message" style="display: none;"></div>
+				<script>
+				    $(document).ready(function() {
+				        // Função para validar o campo havePosGrad
+				        function validateHavePosGrad() {
+				            if ($('input[name="havePosGrad"]:checked').length === 0) {
+				                $('#havePosGradError').text('Please select an option').show();
+				                return false;
+				            }
+				            $('#havePosGradError').hide();
+				            return true;
+				        }
 				
+				        // Validar ao enviar o formulário
+				        $('form').submit(function() {
+				            return validateHavePosGrad();
+				        });
+				
+				        // Validar ao alterar a seleção
+				        $('input[name="havePosGrad"]').change(function() {
+				            validateHavePosGrad();
+				        });
+				    });
+			</script>
+
+
 				<div class=" question">
 					<form:label path="posGrad">Describe the pos graduations you have</form:label>
 				</div>
@@ -93,12 +144,39 @@
 				<form:errors path = "posGrad"></form:errors><br>
 			</div>
 			<div>
-				<div class=" question">	
-					<form:label path="dayShift">Availability (days-shift)</form:label>
+				<div class="question">   
+				    <div class="form-floating d-flex justify-content-center">
+				        <label for="floatingSelect" class="form-floating d-flex justify-content-center">Availability</label>
+				        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:200px;" name="dayShift" required>
+						    <option value="" selected disabled hidden>Day-shift</option>
+						    <option value="MONDAY">Monday</option>
+						    <option value="TUESDAY">Tuesday</option>
+						    <option value="WEDNESDAY">Wednesday</option>
+						    <option value="THURSDAY">Thursday</option>
+						    <option value="FRIDAY">Friday</option>
+						    <option value="SATURDAY">Saturday</option>
+						    <option value="SUNDAY">Sunday</option>
+						</select>
+
+					</div>
+				    <div id="dayShiftError" class="error-message" style="display: none;">Please select an option</div>
 				</div>
-				<form:input type ="text" path = "dayShift" class="form-input large-textbox" placeholder="The days you are able to work"></form:input>   
-				<form:errors path = "dayShift"></form:errors><br>
-			
+
+				<script>
+				    $(document).ready(function() {
+				        // Validar ao enviar o formulário
+				        $('form').submit(function() {
+				            var selectedValue = $('#floatingSelect').val();
+				            if (selectedValue === null || selectedValue === '') {
+				                $('#dayShiftError').show();
+				                return false;
+				            }
+				            $('#dayShiftError').hide();
+				            return true;
+				        });
+				    });
+				</script>
+
 				<div class=" question">	
 					<form:label path="skills">Tell us about yourself and any personal skills you have</form:label>
 				</div>

@@ -1,8 +1,8 @@
 package com.caroline.findingdoctors1.models;
 
 import java.util.Date;
-
 import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -12,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -62,14 +61,17 @@ public class User {
     private String certification;
     
     @Column(nullable = false, columnDefinition = "TINYINT(1) default 0")
-    @NotNull(message= "You must choose an option.")
+    @NotNull (message= "You must choose an option.")
     private Boolean havePosGrad;
     
     private String posGrad;
     
-    @NotBlank(message="Describe your availability (days-shift).")
-    @Size(min=3, max=128, message="Your availability must have between 3 and 128 characters")
-    private String dayShift;
+    public enum DayShift {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+
+    @NotNull(message = "Please select your availability")
+    private DayShift dayShift;
     
     @NotBlank(message="Your personal skills are required.")
     @Size(min=1, max=255, message="Your personal skills description must have between 1 and 255 characters")
@@ -110,12 +112,11 @@ public class User {
 			@NotBlank(message = "You must choose an specialty area.") @Size(min = 3, max = 128) String specialty,
 			@NotNull(message = "You must choose an option.") Boolean haveCertification, String certification,
 			@NotNull(message = "You must choose an option.") Boolean havePosGrad, String posGrad,
-			@NotBlank(message = "Describe your availability (days-shift).") @Size(min = 3, max = 128, message = "Your availability must have between 3 and 128 characters") String dayShift,
+			@NotNull(message = "Please select your availability") DayShift dayShift,
 			@NotBlank(message = "Your personal skills are required.") @Size(min = 1, max = 255, message = "Your personal skills description must have between 1 and 255 characters") String skills,
 			@NotBlank(message = "Your contact phone is required.") @Pattern(regexp = "^[0-9]{10}$", message = "Invalid phone number format. Use 10 digits.") String phone,
 			@Size(min = 3, max = 128) String facebook, @Size(min = 3, max = 128) String linkedIn, Date updatedAt,
 			List<Review> reviewUser) {
-		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -233,11 +234,11 @@ public class User {
 		this.posGrad = posGrad;
 	}
 
-	public String getDayShift() {
+	public DayShift getDayShift() {
 		return dayShift;
 	}
 
-	public void setDayShift(String dayShift) {
+	public void setDayShift(DayShift dayShift) {
 		this.dayShift = dayShift;
 	}
 
@@ -288,7 +289,7 @@ public class User {
 	public void setReviewUser(List<Review> reviewUser) {
 		this.reviewUser = reviewUser;
 	}
-
-	
+    
+   	
 }
     
