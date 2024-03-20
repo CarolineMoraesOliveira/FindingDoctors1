@@ -54,9 +54,8 @@ input:-webkit-autofill {
     font-size: 5px;
 }
 
-.input-group {
-    position: relative;
-    margin-bottom: 5px;
+.form-control {
+	text-align: left;
 }
 
 #error-message {

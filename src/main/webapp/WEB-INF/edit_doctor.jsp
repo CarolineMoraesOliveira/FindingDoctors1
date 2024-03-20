@@ -64,46 +64,43 @@
 				<form:input type ="text" path = "specialty" class= "form-input large-textbox" placeholder="Your main medical specialty area"></form:input>   
 				<form:errors path = "specialty"></form:errors><br>
 				
-				
-				<p>Do you have any specialized certification?
+				<p>
+					Do you have any specialized certification?
 					<input type="radio" name="haveCertification" value="yes" id="yes">
 					<label for="yes">Yes</label>
 					<input type="radio" name="haveCertification" value="no" id="no">
 					<label for="no">No</label>
 				</p>
+		
 				<div id="haveCertificationError" class="error-message" style="display: none;"></div>
+				
+				<div class="question" id="certificationField" style="display: none;">
+				    <form:label path="certification">Describe your certificates or specialized skills/year of completion</form:label>
+				    <form:textarea path="certification" class="form-input superlarge-textbox"></form:textarea>
+				    <form:errors path="certification"></form:errors><br>
+				</div>
+				
 				<script>
 				    $(document).ready(function() {
 				        // Função para validar o campo haveCertification
 				        function validateHaveCertification() {
-				            if ($('input[name="haveCertification"]:checked').length === 0) {
-				                $('#haveCertificationError').text('Please select an option').show();
-				                return false;
+				            if ($('input[name="haveCertification"]:checked').val() === "yes") {
+				                $('#certificationField').show();
+				            } else {
+				                $('#certificationField').hide();
 				            }
-				            $('#haveCertificationError').hide();
-				            return true;
 				        }
 				
-				        // Validar ao enviar o formulário
-				        $('form').submit(function() {
-				            return validateHaveCertification();
-				        });
+				        // Validar ao carregar a página
+				        validateHaveCertification();
 				
 				        // Validar ao alterar a seleção
 				        $('input[name="haveCertification"]').change(function() {
 				            validateHaveCertification();
 				        });
 				    });
-			</script>
-				
-			</div>
-			<div>
-				<div class=" question">
-					<form:label path="certification">Describe your certificates or specialized skills/year of completion</form:label>
-				</div>
-				<form:textarea path = "certification" class= "form-input superlarge-textbox"></form:textarea>
-				<form:errors path = "certification"></form:errors><br>
-				
+				</script>
+
 			
 				<p>Do you have a pos graduation?
 					<input type="radio" name="havePosGrad" value="yes" id="yes">
@@ -112,43 +109,37 @@
 					<label for="no">No</label>
 				</p>
 				<div id="havePosGradError" class="error-message" style="display: none;"></div>
+				
+				<div class=" question" id="posGradField" style="display:none;">
+					<form:label path="posGrad">Describe the pos graduations you have</form:label>
+					<form:textarea path = "posGrad" class= "form-input superlarge-textbox"></form:textarea>
+					<form:errors path = "posGrad"></form:errors><br>
+				</div>
 				<script>
 				    $(document).ready(function() {
 				        // Função para validar o campo havePosGrad
 				        function validateHavePosGrad() {
-				            if ($('input[name="havePosGrad"]:checked').length === 0) {
-				                $('#havePosGradError').text('Please select an option').show();
-				                return false;
-				            }
-				            $('#havePosGradError').hide();
-				            return true;
-				        }
+				        	 if ($('input[name="havePosGrad"]:checked').val() === "yes") {
+					                $('#posGradField').show();
+					            } else {
+					                $('#posGradField').hide();
+					            }
+					        }
 				
 				        // Validar ao enviar o formulário
-				        $('form').submit(function() {
-				            return validateHavePosGrad();
-				        });
+				     		validateHavePosGrad();
 				
-				        // Validar ao alterar a seleção
-				        $('input[name="havePosGrad"]').change(function() {
-				            validateHavePosGrad();
+				     	// Validar ao alterar a seleção
+					        $('input[name="havePosGrad"]').change(function() {
+					            validateHavePosGrad();
 				        });
 				    });
-			</script>
-
-
-				<div class=" question">
-					<form:label path="posGrad">Describe the pos graduations you have</form:label>
-				</div>
-				<form:textarea path = "posGrad" class= "form-input superlarge-textbox"></form:textarea>
-				<form:errors path = "posGrad"></form:errors><br>
-			</div>
-			<div>
+				</script>
 				<div class="question">   
 				    <div class="form-floating d-flex justify-content-center">
 				        <label for="floatingSelect" class="form-floating d-flex justify-content-center">Availability</label>
 				        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:200px;" name="dayShift" required>
-						    <option value="" selected disabled hidden>Day-shift</option>
+						    <option value="" selected disabled hidden=>Day-shift</option>
 						    <option value="MONDAY">Monday</option>
 						    <option value="TUESDAY">Tuesday</option>
 						    <option value="WEDNESDAY">Wednesday</option>
