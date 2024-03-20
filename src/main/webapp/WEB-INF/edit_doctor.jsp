@@ -59,7 +59,7 @@
 				<form:errors path = "gradInstitution"></form:errors><br>
 				
 				<div class=" question">
-					<form:label path="specialty">Medical Specialty</form:label>
+					<form:label path="specialty">Medical Specialty </form:label>
 				</div>
 				<form:input type ="text" path = "specialty" class= "form-input large-textbox" placeholder="Your main medical specialty area"></form:input>   
 				<form:errors path = "specialty"></form:errors><br>
@@ -113,7 +113,9 @@
 				<div class=" question" id="posGradField" style="display:none;">
 					<form:label path="posGrad">Describe the pos graduations you have</form:label>
 					<form:textarea path = "posGrad" class= "form-input superlarge-textbox"></form:textarea>
-					<form:errors path = "posGrad"></form:errors><br>
+					<div>
+						<form:errors path = "posGrad"></form:errors><br>
+					</div>
 				</div>
 				<script>
 				    $(document).ready(function() {
@@ -172,25 +174,31 @@
 					<form:label path="skills">Tell us about yourself and any personal skills you have</form:label>
 				</div>
 				<form:textarea path = "skills" class= "form-input superlarge-textbox"></form:textarea>
-				<form:errors path = "skills"></form:errors><br>
-			
+				<div>
+					<form:errors path = "skills"></form:errors><br>
+				</div>
 				<div class=" question">
 					<form:label path="phone">Phone</form:label>
 				</div>
 				<form:input path= "phone" type = "number" name ="number" class= "form-input large-textbox" placeholder="(000)000-0000 this format"/>
-				<form:errors path = "phone"></form:errors><br>
+				<div>
+					<form:errors path = "phone"></form:errors><br>
+				</div>
 				
 				<div class=" question">	
 					<form:label path="facebook">Facebook</form:label>
 				</div>
 				<form:input type ="text" path = "facebook" class= "form-input large-textbox" placeholder="Your facebook profile"></form:input>   
-				<form:errors path = "facebook"></form:errors><br>
-			
+				<div>
+					<form:errors path = "facebook"></form:errors><br>
+				</div>
 				<div class=" question">	
 					<form:label path="linkedIn">linkedIn</form:label>
 				</div>
 				<form:input type ="text" path = "linkedIn" class= "form-input large-textbox" placeholder="Your linkedIn profile"></form:input>   
-				<form:errors path = "linkedIn"></form:errors><br>
+				<div>
+					<form:errors path = "linkedIn"></form:errors><br>
+				</div>
 			</div>
 		</div>
 		<form:input type ="hidden" path = "password"></form:input>  	
