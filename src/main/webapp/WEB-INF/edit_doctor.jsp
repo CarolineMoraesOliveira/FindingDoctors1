@@ -67,16 +67,11 @@
 					<label for="no">No</label>
 				</p>
 				<div id="haveCertificationError" class="error-message" style="display: none;"></div>
-				
-				
 				<div class="input-group" id="certificationField" style="display: none;">
 					<form:label path="certification"></form:label>
 					<form:textarea type = "certification" path="certification" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Describe your certificates or specialized skills/year of completion" aria-label="certification" aria-describedby="input-group-left"></form:textarea>
 				</div>
 				<form:errors path = "certification" id="error-message"></form:errors><br>
-				
-				
-
 				<script>
 				    $(document).ready(function() {
 				        // Função para validar o campo haveCertification
@@ -104,15 +99,13 @@
 					<label for="no">No</label>
 				</p>
 				<div id="havePosGradError" class="error-message" style="display: none;"></div>
-				
-				
-				<div class=" question" id="posGradField" style="display:none;">
-					<form:label path="posGrad">Describe the pos graduations you have</form:label>
-					<form:textarea path = "posGrad" class= "form-input superlarge-textbox"></form:textarea>
-					<div>
-						<form:errors path = "posGrad"></form:errors><br>
-					</div>
+				<div class="input-group" id="posGradField" style="display: none;">
+					<form:label path="posGrad"></form:label>
+					<form:textarea type = "posGrad" path="posGrad" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Describe the post graduations you have" aria-label="certification" aria-describedby="input-group-left"></form:textarea>
+				<div>
+				<form:errors path = "posGrad" id="error-message"></form:errors><br>
 				</div>
+			</div>
 				<script>
 				    $(document).ready(function() {
 				        // Função para validar o campo havePosGrad
@@ -135,34 +128,40 @@
 				</script>
 				<div class="question">
 				    <label class="form-label">Availability</label>
-				    <div class="form-check">
+				    <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="mondayCheckbox" name="availableDays" value="MONDAY">
 				        <label class="form-check-label" for="mondayCheckbox">Monday</label>
 				    </div>
-				    <div class="form-check">
+				    <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="tuesdayCheckbox" name="availableDays" value="TUESDAY">
 				        <label class="form-check-label" for="tuesdayCheckbox">Tuesday</label>
 				    </div>
-				    <div class="form-check">
+				    <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="wednesdayCheckbox" name="availableDays" value="WEDNESDAY">
 				        <label class="form-check-label" for="wednesdayCheckbox">Wednesday</label>
 				    </div>
-				     <div class="form-check">
+				     <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="thursdayCheckbox" name="availableDays" value="THURSDAY">
 				        <label class="form-check-label" for="thursdayCheckbox">Thursday</label>
 				    </div>
-				     <div class="form-check">
+				     <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="fridayCheckbox" name="availableDays" value="FRIDAY">
 				        <label class="form-check-label" for="fridayCheckbox">Friday</label>
 				    </div>
-				     <div class="form-check">
+				     <div class="form-check" style="display: inline-flex;">
 				        <input class="form-check-input" type="checkbox" id="saturdayCheckbox" name="availableDays" value="SATURDAY">
 				        <label class="form-check-label" for="saturdayCheckbox">Saturday</label>
 				    </div>
-				    <!-- Repita o mesmo padrão para os outros dias da semana -->
+				     <div class="form-check" style="display: inline-flex;">
+				        <input class="form-check-input" type="checkbox" id="sundayCheckbox" name="availableDays" value="SUNDAY">
+				        <label class="form-check-label" for="sundayCheckbox">Sunday</label>
+				    </div>
+				     <div class="form-check" style="display: inline-flex;">
+				        <input class="form-check-input" type="checkbox" id="nightsCheckbox" name="availableDays" value="NIGHTS">
+				        <label class="form-check-label" for="nightsCheckbox">NIGHTS</label>
+				    </div>
 				</div>
 				<div id="availabilityError" class="error-message" style="display: none;">Please select at least one day</div>
-				
 				<script>
 				    $(document).ready(function() {
 				        // Validar ao enviar o formulário
@@ -177,31 +176,40 @@
 				        });
 				    });
 				</script>
-
-
-				<div class=" question">	
-					<form:label path="skills">Tell us about yourself and any personal skills you have</form:label>
+				<div class="input-group">
+					<form:label path="skills"></form:label>
 				</div>
-				<form:textarea path = "skills" class= "form-input superlarge-textbox"></form:textarea>
-				<div>
-					<form:errors path = "skills"></form:errors><br>
-				</div>
-				<div class=" question">
-					<form:label path="phone">Phone number</form:label>
-				</div>
-				<form:input path= "phone" type = "number" name ="number" class= "form-input large-textbox" placeholder="(000)000-0000 this format"/>
-				<div>
-					<form:errors path = "phone"></form:errors><br>
+					<form:textarea path="skills" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Tell us about yourself and any personal skills you have" aria-label="skills" aria-describedby="input-group-left"></form:textarea>
 				</div>
 				
-				<div class=" question">	
+				<form:errors path = "skills" id="error-message"></form:errors><br>
+				</div>
+		
+			<div class= "question">
+				<div class="input-group">
+					<form:label path="phone"></form:label>
+					<form:input type = "phone" path = "phone" name ="number" class= "form-input large-textbox" placeholder="(000)000-0000 this format" style="text-align: left;" aria-label="phone" aria-describedby="input-group-left"/><br>
+				</div>
+				<form:errors path = "phone" id="error-message"></form:errors><br>
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				<div class="input-group">	
 					<form:label path="facebook">Facebook</form:label>
 				</div>
 				<form:input type ="text" path = "facebook" class= "form-input large-textbox" placeholder="Your facebook profile"></form:input>   
 				<div>
 					<form:errors path = "facebook"></form:errors><br>
 				</div>
-				<div class=" question">	
+				
+				
+				<div class="input-group">	
 					<form:label path="linkedIn">LinkedIn</form:label>
 				</div>
 				<form:input type ="text" path = "linkedIn" class= "form-input large-textbox" placeholder="Your linkedIn profile"></form:input>   
