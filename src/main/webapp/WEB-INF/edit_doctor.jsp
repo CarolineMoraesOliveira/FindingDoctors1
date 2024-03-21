@@ -34,36 +34,31 @@
 		
 		<div class = "division">
 			<div>
-				<div class="question">
-					<form:label path="lastName">Last name</form:label>
+				<div class="input-group">
+					<form:label path="lastName"></form:label>
+					<form:input type = "lastName" path = "lastName" class="form-control" style="text-align: left;" placeholder="Last name" aria-label="Last name" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type ="text" path = "lastName" class="form-input large-textbox" placeholder="Your last name" ></form:input>   
-				<form:errors path = "lastName"></form:errors><br>
-				
-				<div class=" question">
-					<form:label path="city">Located city</form:label>
+				<form:errors path = "lastName" id="error-message"></form:errors><br>
+				<div class="input-group">
+					<form:label path="city"></form:label>
+					<form:input type = "city" path = "city" class="form-control" style="text-align: left;" placeholder="The city you live" aria-label="City" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type ="text" path = "city" class="form-input large-textbox" placeholder="The city you live"></form:input>   
-				<form:errors path = "city"></form:errors><br>
-				
-				<div class=" question">
-					<form:label path="email">Email</form:label><br>
+				<form:errors path = "city" id="error-message"></form:errors><br>
+				<div class="input-group">
+					<form:label path="email"></form:label>
+					<form:input type = "email" path = "email" class="form-control" style="text-align: left;" placeholder="Email" aria-label="Emal" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type = "text" path = "email" class="form-input large-textbox" placeholder="Your e-mail"/><br>
-				<form:errors path = "email"></form:errors>
-				
-				<div class=" question">			
-					<form:label path="gradInstitution">Graduation Institution</form:label>
+				<form:errors path = "email" id="error-message"></form:errors><br>
+				<div class="input-group">
+					<form:label path="gradInstitution"></form:label>
+					<form:input type = "gradInstitution" path = "gradInstitution" class="form-control" style="text-align: left;" placeholder="The institution you graduated" aria-label="gradInstitution" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input path="gradInstitution" type = "text" class="form-input large-textbox" placeholder="The institution you graduated"/>
-				<form:errors path = "gradInstitution"></form:errors><br>
-				
-				<div class=" question">
-					<form:label path="specialty">Medical Specialty </form:label>
+				<form:errors path = "gradInstitution" id="error-message"></form:errors><br>
+				<div class="input-group">
+					<form:label path="specialty"></form:label>
+					<form:input type = "specialty" path = "specialty" class="form-control" style="text-align: left;" placeholder="Your main medical specialty area" aria-label="specialty" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type ="text" path = "specialty" class= "form-input large-textbox" placeholder="Your main medical specialty area"></form:input>   
-				<form:errors path = "specialty"></form:errors><br>
-				
+				<form:errors path = "specialty" id="error-message"></form:errors><br>
 				<p>
 					Do you have any specialized certification?
 					<input type="radio" name="haveCertification" value="yes" id="yes">
@@ -71,15 +66,17 @@
 					<input type="radio" name="haveCertification" value="no" id="no">
 					<label for="no">No</label>
 				</p>
-		
 				<div id="haveCertificationError" class="error-message" style="display: none;"></div>
 				
-				<div class="question" id="certificationField" style="display: none;">
-				    <form:label path="certification">Describe your certificates or specialized skills/year of completion</form:label>
-				    <form:textarea path="certification" class="form-input superlarge-textbox"></form:textarea>
-				    <form:errors path="certification"></form:errors><br>
-				</div>
 				
+				<div class="input-group" id="certificationField" style="display: none;">
+					<form:label path="certification"></form:label>
+					<form:textarea type = "certification" path="certification" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Describe your certificates or specialized skills/year of completion" aria-label="certification" aria-describedby="input-group-left"></form:textarea>
+				</div>
+				<form:errors path = "certification" id="error-message"></form:errors><br>
+				
+				
+
 				<script>
 				    $(document).ready(function() {
 				        // Função para validar o campo haveCertification
@@ -100,15 +97,14 @@
 				        });
 				    });
 				</script>
-
-			
-				<p>Do you have a pos graduation?
+				<p>Do you have a post graduation?
 					<input type="radio" name="havePosGrad" value="yes" id="yes">
 					<label for="yes">Yes</label>
 					<input type="radio" name="havePosGrad" value="no" id="no">
 					<label for="no">No</label>
 				</p>
 				<div id="havePosGradError" class="error-message" style="display: none;"></div>
+				
 				
 				<div class=" question" id="posGradField" style="display:none;">
 					<form:label path="posGrad">Describe the pos graduations you have</form:label>
@@ -137,38 +133,51 @@
 				        });
 				    });
 				</script>
-				<div class="question">   
-				    <div class="form-floating d-flex justify-content-center">
-				        <label for="floatingSelect" class="form-floating d-flex justify-content-center">Availability</label>
-				        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" style="width:200px;" name="dayShift" required>
-						    <option value="" selected disabled hidden=>Day-shift</option>
-						    <option value="MONDAY">Monday</option>
-						    <option value="TUESDAY">Tuesday</option>
-						    <option value="WEDNESDAY">Wednesday</option>
-						    <option value="THURSDAY">Thursday</option>
-						    <option value="FRIDAY">Friday</option>
-						    <option value="SATURDAY">Saturday</option>
-						    <option value="SUNDAY">Sunday</option>
-						</select>
-
-					</div>
-				    <div id="dayShiftError" class="error-message" style="display: none;">Please select an option</div>
+				<div class="question">
+				    <label class="form-label">Availability</label>
+				    <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="mondayCheckbox" name="availableDays" value="MONDAY">
+				        <label class="form-check-label" for="mondayCheckbox">Monday</label>
+				    </div>
+				    <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="tuesdayCheckbox" name="availableDays" value="TUESDAY">
+				        <label class="form-check-label" for="tuesdayCheckbox">Tuesday</label>
+				    </div>
+				    <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="wednesdayCheckbox" name="availableDays" value="WEDNESDAY">
+				        <label class="form-check-label" for="wednesdayCheckbox">Wednesday</label>
+				    </div>
+				     <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="thursdayCheckbox" name="availableDays" value="THURSDAY">
+				        <label class="form-check-label" for="thursdayCheckbox">Thursday</label>
+				    </div>
+				     <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="fridayCheckbox" name="availableDays" value="FRIDAY">
+				        <label class="form-check-label" for="fridayCheckbox">Friday</label>
+				    </div>
+				     <div class="form-check">
+				        <input class="form-check-input" type="checkbox" id="saturdayCheckbox" name="availableDays" value="SATURDAY">
+				        <label class="form-check-label" for="saturdayCheckbox">Saturday</label>
+				    </div>
+				    <!-- Repita o mesmo padrão para os outros dias da semana -->
 				</div>
-
+				<div id="availabilityError" class="error-message" style="display: none;">Please select at least one day</div>
+				
 				<script>
 				    $(document).ready(function() {
 				        // Validar ao enviar o formulário
 				        $('form').submit(function() {
-				            var selectedValue = $('#floatingSelect').val();
-				            if (selectedValue === null || selectedValue === '') {
-				                $('#dayShiftError').show();
+				            var checkedDays = $('input[name="availableDays"]:checked').length;
+				            if (checkedDays === 0) {
+				                $('#availabilityError').show();
 				                return false;
 				            }
-				            $('#dayShiftError').hide();
+				            $('#availabilityError').hide();
 				            return true;
 				        });
 				    });
 				</script>
+
 
 				<div class=" question">	
 					<form:label path="skills">Tell us about yourself and any personal skills you have</form:label>
@@ -178,7 +187,7 @@
 					<form:errors path = "skills"></form:errors><br>
 				</div>
 				<div class=" question">
-					<form:label path="phone">Phone</form:label>
+					<form:label path="phone">Phone number</form:label>
 				</div>
 				<form:input path= "phone" type = "number" name ="number" class= "form-input large-textbox" placeholder="(000)000-0000 this format"/>
 				<div>
@@ -193,7 +202,7 @@
 					<form:errors path = "facebook"></form:errors><br>
 				</div>
 				<div class=" question">	
-					<form:label path="linkedIn">linkedIn</form:label>
+					<form:label path="linkedIn">LinkedIn</form:label>
 				</div>
 				<form:input type ="text" path = "linkedIn" class= "form-input large-textbox" placeholder="Your linkedIn profile"></form:input>   
 				<div>

@@ -7,7 +7,7 @@ html, body {
 
 * {
 	font-family:'Open Sans';
-	padding-top: 5px;
+	padding-top: 10px;
 	font-weight: thin;
 	text-align: center;	
 }
@@ -15,14 +15,9 @@ html, body {
 span {
 	color: orange;
 }
-p {
-	
-	font-size: 25px;
+p, label {
+	font-size: 23px;
 	color:#9acd32; 
-}
-
-span {
-	color: orange;
 }
 .top {
 	font-size:30px;
@@ -35,14 +30,14 @@ h2, h3 {
 
 }
 form, p {
-	text-align: left;
+	text-align: center;
 }
 .up {
 	line-height: 0;
 }
 .question {
     text-align: center;
-    margin-bottom: 20px; /* Espaço entre as perguntas */
+    margin-bottom: 10px; /* Espaço entre as perguntas */
     /* Adicione mais estilos conforme necessário */
 }
 
@@ -50,6 +45,9 @@ form, p {
     width: 20%; 
     box-sizing: border-box; 
     text-align: left; 
+}
+.form-label {
+	color:#9acd32;
 }
 .division {
 	display: flex;
@@ -60,8 +58,7 @@ form, p {
 	width: 300px;
 }
 .superlarge-textbox {
-	width: 300px;
-	height: 100px;
+	width: 100%;
 }
 .text-center {
     text-align: center;
@@ -69,7 +66,6 @@ form, p {
 .d-flex {
     display: flex;
 }
-
 .justify-content-center {
     justify-content: center;
 }
