@@ -38,7 +38,7 @@
 					<form:label path="lastName"></form:label>
 					<form:input type = "lastName" path = "lastName" class="form-control" style="text-align: left;" placeholder="Last name" aria-label="Last name" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:errors path = "lastName" id="error-message"></form:errors><br>
+				<form:errors path = "lastName" id="error-message" ></form:errors><br>
 				<div class="input-group">
 					<form:label path="city"></form:label>
 					<form:input type = "city" path = "city" class="form-control" style="text-align: left;" placeholder="The city you live" aria-label="City" aria-describedby="input-group-left"/><br>
@@ -101,7 +101,7 @@
 				<div id="havePosGradError" class="error-message" style="display: none;"></div>
 				<div class="input-group" id="posGradField" style="display: none;">
 					<form:label path="posGrad"></form:label>
-					<form:textarea type = "posGrad" path="posGrad" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Describe the post graduations you have" aria-label="certification" aria-describedby="input-group-left"></form:textarea>
+					<form:textarea type = "posGrad" path="posGrad" class="form-control" style="text-align: left;" placeholder="Describe the post graduations you have" aria-label="certification" aria-describedby="input-group-left"></form:textarea>
 				<div>
 				<form:errors path = "posGrad" id="error-message"></form:errors><br>
 				</div>
@@ -178,48 +178,28 @@
 				</script>
 				<div class="input-group">
 					<form:label path="skills"></form:label>
+					<form:textarea path="skills" class="form-control" style="text-align: left;" placeholder="Tell us about yourself and any personal skills you have" aria-label="skills" aria-describedby="input-group-left"></form:textarea>
 				</div>
-					<form:textarea path="skills" class="form-input superlarge-textbox" style="text-align: left;" placeholder="Tell us about yourself and any personal skills you have" aria-label="skills" aria-describedby="input-group-left"></form:textarea>
-				</div>
-				
-				<form:errors path = "skills" id="error-message"></form:errors><br>
-				</div>
-		
-			<div class= "question">
-				<div class="input-group">
-					<form:label path="phone"></form:label>
-					<form:input type = "phone" path = "phone" name ="number" class= "form-input large-textbox" placeholder="(000)000-0000 this format" style="text-align: left;" aria-label="phone" aria-describedby="input-group-left"/><br>
+					<form:errors path = "skills" id="error-message"></form:errors><br>
+				<div class="input-groupA">
+					<form:label path="phone">Phone number</form:label>
+					<form:input type = "phone" path = "phone" name ="number" class="form-control" style="text-align: left;" placeholder="(000)000-0000 this format" aria-label="phone" aria-describedby="input-group-left"/><br>
 				</div>
 				<form:errors path = "phone" id="error-message"></form:errors><br>
-				
-				
-				
-			
-				
-				
-				
-				
-				
-				<div class="input-group">	
+				<div class="input-groupA">
 					<form:label path="facebook">Facebook</form:label>
+					<form:input type = "facebook" path = "facebook" class="form-control" style="text-align: left;" placeholder="Your facebook profile" aria-label="facebook" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type ="text" path = "facebook" class= "form-input large-textbox" placeholder="Your facebook profile"></form:input>   
-				<div>
-					<form:errors path = "facebook"></form:errors><br>
-				</div>
-				
-				
-				<div class="input-group">	
+				<form:errors path = "facebook" id="error-message"></form:errors><br>
+				<div class="input-groupA">
 					<form:label path="linkedIn">LinkedIn</form:label>
+					<form:input type = "linkedIn" path = "linkedIn" class="form-control" style="text-align: left;" placeholder="Your linkedIn profile" aria-label="linkedIn" aria-describedby="input-group-left"/><br>
 				</div>
-				<form:input type ="text" path = "linkedIn" class= "form-input large-textbox" placeholder="Your linkedIn profile"></form:input>   
-				<div>
-					<form:errors path = "linkedIn"></form:errors><br>
-				</div>
+				<form:errors path = "linkedIn" id="error-message"></form:errors><br>
 			</div>
 		</div>
 		<form:input type ="hidden" path = "password"></form:input>  	
-		<input class="button" type = "submit" value= "Submit">
+		<button type="submit" class="btn btn-primary">Submit</button>
 	</form:form>
 </body>
 </html>
