@@ -3,6 +3,8 @@ package com.caroline.findingdoctors1.models;
 import java.util.Date;
 import java.util.List;
 
+import com.caroline.findingdoctors1.util.ValidDayShift;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -67,11 +69,12 @@ public class User {
     private String posGrad;
     
     public enum DayShift {
-        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY, NIGHTS
     }
 
-    @NotNull(message = "Please select your availability")
+    @ValidDayShift(message = "Please select your availability")
     private DayShift dayShift;
+
     
     @NotBlank(message="Your personal skills are required.")
     @Size(min=1, max=255, message="Your personal skills description must have between 1 and 255 characters")
@@ -111,12 +114,12 @@ public class User {
 			@NotBlank(message = "The graduation institution's name is required.") @Size(min = 1, max = 128, message = "The institution's name must have between 1 and 128 characters") String gradInstitution,
 			@NotBlank(message = "You must choose an specialty area.") @Size(min = 3, max = 128) String specialty,
 			@NotNull(message = "You must choose an option.") Boolean haveCertification, String certification,
-			@NotNull(message = "You must choose an option.") Boolean havePosGrad, String posGrad,
-			@NotNull(message = "Please select your availability") DayShift dayShift,
+			@NotNull(message = "You must choose an option.") Boolean havePosGrad, String posGrad, DayShift dayShift,
 			@NotBlank(message = "Your personal skills are required.") @Size(min = 1, max = 255, message = "Your personal skills description must have between 1 and 255 characters") String skills,
 			@NotBlank(message = "Your contact phone is required.") @Pattern(regexp = "^[0-9]{10}$", message = "Invalid phone number format. Use 10 digits.") String phone,
 			@Size(min = 3, max = 128) String facebook, @Size(min = 3, max = 128) String linkedIn, Date updatedAt,
 			List<Review> reviewUser) {
+		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -289,7 +292,5 @@ public class User {
 	public void setReviewUser(List<Review> reviewUser) {
 		this.reviewUser = reviewUser;
 	}
-    
-   	
+
 }
-    
